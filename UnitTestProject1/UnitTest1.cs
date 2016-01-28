@@ -9,7 +9,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            //New change
+            //New change to test
             Assert.IsTrue(true);
         }
     }
