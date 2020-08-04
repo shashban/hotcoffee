@@ -41,9 +41,10 @@ stages:
         targetPath: '**\bin\*test*.dll'
         artifact: 'TestBins'
         publishLocation: 'pipeline'
-
-  - job: Job2
-    dependsOn: Job1
+- stage: Stage2
+  dependsOn: Build
+  jobs:
+  - job: Job2    
     pool:
       vmImage: 'windows-latest'
     steps:
