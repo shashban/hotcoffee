@@ -35,10 +35,11 @@ stages:
       inputs:
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
+        codeCoverageEnabled: true
 
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Build.SourcesDirectory)\**\bin\**\*test*.dll'
+        targetPath: '$(Build.SourcesDirectory)\HotCoffee.Tests\bin\Release\*.*'
         artifact: 'TestBins'
         publishLocation: 'pipeline'
 - stage: Stage2
