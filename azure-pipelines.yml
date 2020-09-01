@@ -38,7 +38,7 @@ stages:
 
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '.\bin\**\*test*.dll'
+        targetPath: '$(Build.SourcesDirectory)\**\bin\**\*test*.dll'
         artifact: 'TestBins'
         publishLocation: 'pipeline'
 - stage: Stage2
@@ -54,3 +54,4 @@ stages:
       inputs:
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
+        codeCoverageEnabled: true
